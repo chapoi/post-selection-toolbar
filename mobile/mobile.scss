@@ -27,7 +27,6 @@
   .btn.ai-post-helper__trigger {
     @include animate;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
     background: var(--secondary);
     border: 1px solid var(--primary-low-mid);
@@ -56,6 +55,7 @@
   }
 
   .buttons {
+    flex-wrap: nowrap;
     justify-content: space-around;
     width: 100vw;
     flex-direction: row !important;
