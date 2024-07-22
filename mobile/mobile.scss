@@ -72,6 +72,7 @@
 
 .fk-d-menu:has(.quote-button) {
   width: 100%;
+  max-width: 100vw !important;
   bottom: 2rem;
   top: unset !important;
   transform-origin: none !important;
