@@ -28,7 +28,7 @@
     @include animate;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--secondary);
     border: 1px solid var(--primary-low-mid);
     border-radius: 100%;
     align-items: center;
@@ -47,6 +47,10 @@
       height: 1.35em;
       width: 1.35em;
       color: var(--tertiary);
+    }
+
+    .ai-post-helper {
+      width: auto;
     }
   }
 
