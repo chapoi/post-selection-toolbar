@@ -10,6 +10,7 @@ export default class PostTextSelectionToolbarComponent extends Component {
   menuAppears(element) {
     this.element = element;
     document.body.classList.add("selection-toolbar-visible");
+    document.getElementById("topic-progress-wrapper").style.display = "none";
     this.startScrollCheck();
   }
 
@@ -42,6 +43,13 @@ export default class PostTextSelectionToolbarComponent extends Component {
 
   handleSelectionNotVisible() {
     document.body.classList.remove("selection-toolbar-visible");
+
+    const selection = window.getSelection();
+    if (selection) {
+      selection.removeAllRanges();
+    }
+
+    document.getElementById("topic-progress-wrapper").style.display = "block";
     this.menu.close("post-text-selection-toolbar");
     window.removeEventListener("scroll", this.scrollHandler);
     clearInterval(this.visibilityCheckInterval);
@@ -50,6 +58,7 @@ export default class PostTextSelectionToolbarComponent extends Component {
   willDestroy() {
     super.willDestroy(...arguments);
     document.body.classList.remove("selection-toolbar-visible");
+    document.getElementById("topic-progress-wrapper").style.display = "block";
     window.removeEventListener("scroll", this.scrollHandler);
   }
 }
