@@ -7,8 +7,7 @@ export default class PostTextSelectionToolbarComponent extends Component {
   @service menu;
 
   @action
-  menuAppears(element) {
-    this.element = element;
+  menuAppears() {
     document.body.classList.add("selection-toolbar-visible");
     document.getElementById("topic-progress-wrapper").style.display = "none";
     this.startScrollCheck();
